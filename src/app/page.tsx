@@ -4,7 +4,7 @@ import { Manrope } from "next/font/google";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { Carousel } from "@/components/carousel";
-import { Hero } from "@/components/hero";
+import { HomeHero } from "@/components/home-hero";
 import { TrustBar } from "@/components/trust-bar";
 import { CTASection } from "@/components/cta-section";
 import { Differentiators } from "@/components/differentiators";
@@ -16,7 +16,6 @@ import {
   Trophy,
   Briefcase,
   ShieldCheck,
-  Phone,
 } from "lucide-react";
 
 const headings = Manrope({
@@ -128,89 +127,7 @@ export default function HomePage() {
   return (
     <div className={headings.variable}>
       {/* HERO */}
-      <Hero imageSrc="/images/unsplash/hero-coach-countryside.jpg">
-        <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
-              Multi‑Day UK & European Travel · Airport Transfers · School & Corporate Hire
-            </div>
-            <h1 className="mt-3 font-[var(--font-headings)] text-4xl font-semibold tracking-tight text-ivory sm:text-5xl">
-              Executive Coach & Private Group Transport Across the Three Counties
-            </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-ivory/80">
-              Three Counties Coaches provides premium private coach and minibus hire across
-              Gloucestershire, Worcestershire and Herefordshire. From multi-day UK and
-              European group travel to executive airport transfers, golf transport and
-              school contracts, we deliver dependable, professional group transport with a
-              modern Euro 6 fleet. Our team can assist group organisers in coordinating
-              bespoke itineraries tailored to your schedule and travel objectives.
-            </p>
-
-            <div className="mt-6 flex flex-wrap items-center gap-3">
-              <Button href="/quote" variant="primary">
-                Request a Quote
-              </Button>
-              <Button
-                href="/contact"
-                variant="outline"
-                className="border-white/25 text-ivory hover:bg-white/10"
-              >
-                Contact
-              </Button>
-              <div className="flex items-center gap-2 text-sm text-ivory/70">
-                <Phone className="h-4 w-4 text-gold" />
-                <span>Call CTA (add number)</span>
-              </div>
-            </div>
-
-            <p className="mt-5 text-sm text-ivory/70">
-              Euro 6 compliant fleet • Executive black & white coaches •{" "}
-              <span className="text-ivory">Group-only private hire</span> • UK & European travel
-            </p>
-          </div>
-
-          {/* Quick quote mini-form (stub, but premium) */}
-          <div className="rounded-xl bg-ivory/95 p-6 shadow-soft ring-1 ring-white/10">
-            <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
-              Quick Quote
-            </div>
-            <div className="mt-2 font-[var(--font-headings)] text-xl font-semibold tracking-tight text-charcoal">
-              Tell us the essentials
-            </div>
-            <p className="mt-2 text-sm leading-relaxed text-charcoal/70">
-              Share the basics — we’ll come back with the right vehicle and schedule.
-            </p>
-            <form className="mt-5 grid gap-3">
-              <select className="w-full rounded-md border border-charcoal/15 bg-white px-3 py-2 text-sm">
-                <option>Pickup area</option>
-                <option>Gloucestershire</option>
-                <option>Worcestershire</option>
-                <option>Herefordshire</option>
-                <option>Other</option>
-              </select>
-              <select className="w-full rounded-md border border-charcoal/15 bg-white px-3 py-2 text-sm">
-                <option>Journey type</option>
-                <option>Multi-day tour</option>
-                <option>Day trip</option>
-                <option>Airport transfer</option>
-                <option>School</option>
-                <option>Golf</option>
-                <option>Other</option>
-              </select>
-              <input
-                className="w-full rounded-md border border-charcoal/15 bg-white px-3 py-2 text-sm"
-                placeholder="Travel dates"
-              />
-              <Button href="/quote" variant="primary" className="w-full">
-                Get a Quote
-              </Button>
-              <p className="text-xs text-charcoal/60">
-                (Preview stub — will connect to your enquiry workflow.)
-              </p>
-            </form>
-          </div>
-        </div>
-      </Hero>
+      <HomeHero />
 
       {/* TRUST BAR */}
       <TrustBar />
