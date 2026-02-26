@@ -254,7 +254,7 @@ export default function HomePage() {
             <div className="overflow-hidden rounded-xl bg-white shadow-soft ring-1 ring-charcoal/10">
               <div className="relative h-56 bg-secondary">
                 <Image
-                  src="/images/unsplash/hero-coach-countryside.jpg"
+                  src="/images/home/coach-exterior.jpg"
                   alt=""
                   fill
                   className="object-cover"

@@ -11,7 +11,7 @@ export function HomeHero() {
 
   return (
     <>
-      <Hero imageSrc="/images/unsplash/hero-coach-countryside.jpg">
+      <Hero imageSrc="/images/home/hero.jpg">
         <div className="max-w-4xl">
           <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
             Multi‑Day UK & European Travel · Airport Transfers · School & Corporate Hire
