@@ -15,8 +15,7 @@ export function SiteFooter() {
               height={60}
             />
             <p className="mt-4 text-sm text-ivory/70">
-              Premium coach and minibus hire for private groups — serving Gloucestershire,
-              Worcestershire & Herefordshire, UK-wide by request.
+              Premium private coach and minibus hire across the Three Counties.
             </p>
             <p className="mt-4 text-xs text-ivory/60">
               Three Counties Coaches operates as a trading name of Welland Wheels.
@@ -31,6 +30,7 @@ export function SiteFooter() {
                 <li><Link className="hover:text-gold" href="/tours">Tours</Link></li>
                 <li><Link className="hover:text-gold" href="/airport-transfers">Airport Transfers</Link></li>
                 <li><Link className="hover:text-gold" href="/golf-transport">Golf Transport</Link></li>
+                <li><Link className="hover:text-gold" href="/tours#day-tours">Day Trips</Link></li>
                 <li><Link className="hover:text-gold" href="/schools">Schools</Link></li>
               </ul>
             </div>

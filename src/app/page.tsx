@@ -54,34 +54,34 @@ const signatureTours = [
 
 const services = [
   {
-    title: "Multi‑Day UK & European Tours",
-    icon: Map,
-    desc: "Scotland & Lake District focused touring with calm, dependable logistics.",
-    href: "/tours#multi-day-tours",
-  },
-  {
     title: "Airport Transfers for Groups",
     icon: PlaneTakeoff,
-    desc: "Inbound pickup, hotel coordination and smooth schedules for tour organisers.",
+    desc: "Comfortable group transfers to Heathrow, Birmingham, Bristol and regional airports with flexible pickup coordination.",
     href: "/airport-transfers",
   },
   {
     title: "Golf Group Transport",
     icon: Trophy,
-    desc: "Equipment‑friendly vehicles with luggage capacity and trailer capability.",
+    desc: "Equipment-friendly transport with generous luggage capacity and trailer availability for golf societies and tournaments.",
     href: "/golf-transport",
   },
   {
-    title: "School & Educational Transport",
+    title: "School & Educational Contracts",
     icon: GraduationCap,
-    desc: "DBS-compliant service (where required) with tender-ready documentation available.",
+    desc: "Professional, contract-ready school transport solutions across the Three Counties, delivered with reliability and care.",
     href: "/schools",
   },
   {
-    title: "Day Trips & Group Excursions",
+    title: "Corporate & Chauffeur Services",
     icon: CalendarDays,
-    desc: "London, coastal days out and attraction travel — quote-based, private groups.",
-    href: "/tours#day-tours",
+    desc: "Executive transport for corporate events, conferences and team travel — punctual, professional and discreet.",
+    href: "/quote",
+  },
+  {
+    title: "Multi-Day UK & European Group Travel",
+    icon: Map,
+    desc: "Example multi-day itineraries for private groups travelling by executive coach.",
+    href: "/tours#multi-day-tours",
   },
 ];
 
@@ -91,16 +91,23 @@ export default function HomePage() {
       <Hero imageSrc="/placeholders/hero.svg">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
-            <h1 className="text-4xl leading-tight text-ivory sm:text-5xl">
+            <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
+              Multi‑Day UK & European Travel · Airport Transfers · School & Corporate Hire
+            </div>
+            <h1 className="mt-3 text-4xl leading-tight text-ivory sm:text-5xl">
               Executive Coach & Private Group Transport Across the Three Counties
             </h1>
-            <p className="mt-5 max-w-xl text-base text-ivory/80">
-              Premium group transport for tours, airports, schools and golf — serving
-              Gloucestershire, Worcestershire & Herefordshire.
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-ivory/80">
+              Three Counties Coaches provides premium private coach and minibus hire across
+              Gloucestershire, Worcestershire and Herefordshire. From multi-day UK and
+              European group travel to executive airport transfers, golf transport and
+              school contracts, we deliver dependable, professional group transport with a
+              modern Euro 6 fleet. Our team can assist group organisers in coordinating
+              bespoke itineraries tailored to your schedule and travel objectives.
             </p>
             <p className="mt-4 text-sm text-ivory/70">
-              Euro 6 fleet • 16–51 seats •{" "}
-              <span className="text-ivory">Group bookings only</span>
+              Euro 6 compliant fleet • Executive black & white coaches •{" "}
+              <span className="text-ivory">Group-only private hire</span> • UK & European travel
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
@@ -112,7 +119,7 @@ export default function HomePage() {
                 variant="outline"
                 className="border-white/25 text-ivory hover:bg-white/10"
               >
-                Explore Tours
+                Plan Your Tour
               </Button>
             </div>
           </div>
@@ -166,7 +173,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Services"
             title="Core Services"
-            subtitle="Premium transport, planned properly — designed for organisers and private groups."
+            subtitle="Specialist group transport tailored to your requirements."
           />
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -197,7 +204,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Tours"
             title="Multi‑Day UK & European Group Travel"
-            subtitle="Sample itineraries (no pricing). All routes, timings and accommodation are tailored to your group."
+            subtitle="Example multi-day itineraries for private groups travelling by executive coach. Each journey can be tailored to your schedule, accommodation preferences and sightseeing priorities. We provide private group transport and assist with itinerary coordination — not packaged holidays."
           />
         </Container>
 
@@ -282,12 +289,19 @@ export default function HomePage() {
       <section className="py-16 sm:py-20 bg-secondary">
         <Container>
           <SectionHeading
-            eyebrow="Why us"
-            title="Quietly Premium. Logistically Solid. Built for Organisers."
-            subtitle="We don’t compete on fleet size — we compete on planning, presentation and reliability."
+            eyebrow="Why choose"
+            title="Why Choose Three Counties Coaches"
+            subtitle="Professional, reliable and premium — here's what sets us apart."
           />
           <Differentiators />
-          <TestimonialsStrip />
+          <div className="mt-16">
+            <SectionHeading
+              eyebrow="Testimonials"
+              title="What Our Clients Say"
+              subtitle=""
+            />
+            <TestimonialsStrip />
+          </div>
         </Container>
       </section>
 

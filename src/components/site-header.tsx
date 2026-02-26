@@ -23,7 +23,7 @@ const topNav = [
   { label: "Tours", href: "/tours", dropdown: tours },
   { label: "Schools", href: "/schools" },
   { label: "Fleet", href: "/fleet" },
-  { label: "Locations", href: "/locations" },
+  { label: "Areas", href: "/locations" },
   { label: "Contact", href: "/contact" },
 ];
 
