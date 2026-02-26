@@ -11,7 +11,7 @@ export function HomeHero({ heroImage }: { heroImage: string }) {
     <>
       <Hero imageSrc={heroImage}>
         <div className="max-w-4xl">
-          <h1 className="font-[var(--font-headings)] text-4xl font-semibold tracking-tight text-ivory sm:text-5xl">
+          <h1 className="text-4xl font-semibold tracking-tight text-ivory sm:text-5xl">
             Executive Coach &amp; Private Group Transport Across the Three Counties
           </h1>
 

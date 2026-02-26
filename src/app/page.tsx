@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Manrope } from "next/font/google";
 
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
@@ -18,11 +17,6 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-const headings = Manrope({
-  subsets: ["latin"],
-  variable: "--font-headings",
-  display: "swap",
-});
 
 export const metadata = {
   title: "Executive Coach & Private Group Transport Across the Three Counties",
@@ -152,7 +146,7 @@ function HomeSectionHeading({
       <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
         {eyebrow}
       </div>
-      <h2 className="mt-2 font-[var(--font-headings)] text-3xl font-semibold tracking-tight text-charcoal sm:text-4xl">
+      <h2 className="mt-2 font-serif text-3xl font-semibold tracking-tight text-charcoal sm:text-4xl">
         {title}
       </h2>
       {subtitle ? (
@@ -169,7 +163,7 @@ function HomeSectionHeading({
 
 export default function HomePage() {
   return (
-    <div className={headings.variable}>
+    <>
       {/* HERO */}
       <HomeHero heroImage={LOVABLE.hero} />
 
@@ -408,6 +402,6 @@ export default function HomePage() {
         primaryLabel="Request a Quote"
         secondaryLabel="Contact"
       />
-    </div>
+    </>
   );
 }
