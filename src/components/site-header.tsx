@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/button";
@@ -32,27 +32,13 @@ export function SiteHeader() {
   const [openMobile, setOpenMobile] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-  const isHome = pathname === "/";
-
-  const headerClass = useMemo(
-    () =>
-      cn(
-        "sticky top-0 z-50 border-b",
-        isHome
-          ? "border-white/10 bg-charcoal/80 backdrop-blur"
-          : "border-charcoal/10 bg-ivory/90 backdrop-blur",
-      ),
-    [isHome],
-  );
-
   const linkBase =
     "text-sm transition-colors hover:text-gold focus:outline-none focus:ring-2 focus:ring-gold/30 rounded";
 
   return (
-    <header className={headerClass}>
+    <header className="sticky top-0 z-50 border-b border-white/10 bg-charcoal/85 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3">
-          {/* Desktop: wide logo. Mobile: crest if needed. */}
           <div className="hidden sm:block">
             <Image
               src="/brand/logo-wide.jpg"
@@ -66,8 +52,8 @@ export function SiteHeader() {
             <Image
               src="/brand/logo-stacked.jpg"
               alt="Three Counties Coaches"
-              width={48}
-              height={48}
+              width={44}
+              height={44}
               priority
             />
           </div>
@@ -75,7 +61,6 @@ export function SiteHeader() {
 
         <nav className="hidden items-center gap-6 lg:flex">
           {topNav.map((item) => {
-            const active = pathname === item.href;
             const hasDropdown = !!item.dropdown;
             return (
               <div
@@ -86,25 +71,20 @@ export function SiteHeader() {
               >
                 <Link
                   href={item.href}
-                  className={cn(
-                    linkBase,
-                    isHome ? "text-ivory/90" : "text-charcoal/90",
-                    active && "text-gold",
-                    "inline-flex items-center gap-1",
-                  )}
+                  className={cn(linkBase, "text-ivory/90", "inline-flex items-center gap-1")}
                 >
                   {item.label}
                   {hasDropdown ? <ChevronDown className="h-4 w-4" /> : null}
                 </Link>
 
                 {hasDropdown && openDropdown === item.label ? (
-                  <div className="absolute left-0 mt-2 w-56 overflow-hidden rounded-md border border-charcoal/10 bg-ivory shadow-soft">
+                  <div className="absolute left-0 mt-2 w-56 overflow-hidden rounded-md border border-white/10 bg-charcoal shadow-soft">
                     <div className="p-2">
                       {item.dropdown!.map((d) => (
                         <Link
                           key={d.href}
                           href={d.href}
-                          className="block rounded px-3 py-2 text-sm text-charcoal/90 hover:bg-charcoal/5"
+                          className="block rounded px-3 py-2 text-sm text-ivory/85 hover:bg-white/10"
                         >
                           {d.label}
                         </Link>
@@ -120,7 +100,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           {/* Mobile persistent CTA */}
           <div className="lg:hidden">
-            <Button href="/quote" variant={isHome ? "primary" : "outline"} className="px-3 py-2">
+            <Button href="/quote" variant="primary" className="px-3 py-2">
               Quote
             </Button>
           </div>
@@ -131,10 +111,7 @@ export function SiteHeader() {
           </div>
 
           <button
-            className={cn(
-              "lg:hidden inline-flex items-center justify-center rounded-md p-2",
-              isHome ? "text-ivory" : "text-charcoal",
-            )}
+            className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-ivory"
             onClick={() => setOpenMobile((v) => !v)}
             aria-label="Toggle menu"
           >
@@ -144,14 +121,13 @@ export function SiteHeader() {
       </div>
 
       {openMobile ? (
-        <div className={cn("lg:hidden border-t", isHome ? "border-white/10" : "border-charcoal/10")}>
+        <div className="lg:hidden border-t border-white/10">
           <div className="mx-auto max-w-6xl px-4 py-4 sm:px-6">
             <div className="space-y-2">
               {topNav.map((item) => (
                 <MobileNavItem
                   key={item.label}
                   item={item}
-                  isHome={isHome}
                   onNavigate={() => setOpenMobile(false)}
                 />
               ))}
@@ -165,7 +141,6 @@ export function SiteHeader() {
 
 function MobileNavItem({
   item,
-  isHome,
   onNavigate,
 }: {
   item: {
@@ -173,18 +148,16 @@ function MobileNavItem({
     href: string;
     dropdown?: { label: string; href: string }[];
   };
-  isHome: boolean;
   onNavigate: () => void;
 }) {
   const [open, setOpen] = useState(false);
   const hasDropdown = !!item.dropdown;
-  const text = isHome ? "text-ivory/90" : "text-charcoal/90";
 
   if (!hasDropdown) {
     return (
       <Link
         href={item.href}
-        className={cn("block rounded px-3 py-2 text-sm", text, "hover:bg-charcoal/10")}
+        className="block rounded px-3 py-2 text-sm text-ivory/90 hover:bg-white/10"
         onClick={onNavigate}
       >
         {item.label}
@@ -193,12 +166,9 @@ function MobileNavItem({
   }
 
   return (
-    <div className="rounded border border-charcoal/10 bg-white/5">
+    <div className="rounded border border-white/10 bg-white/5">
       <button
-        className={cn(
-          "flex w-full items-center justify-between rounded px-3 py-2 text-left text-sm",
-          text,
-        )}
+        className="flex w-full items-center justify-between rounded px-3 py-2 text-left text-sm text-ivory/90"
         onClick={() => setOpen((v) => !v)}
       >
         <span>{item.label}</span>
@@ -210,7 +180,7 @@ function MobileNavItem({
             <Link
               key={d.href}
               href={d.href}
-              className={cn("block px-6 py-2 text-sm", text, "hover:bg-charcoal/10")}
+              className="block px-6 py-2 text-sm text-ivory/85 hover:bg-white/10"
               onClick={onNavigate}
             >
               {d.label}
