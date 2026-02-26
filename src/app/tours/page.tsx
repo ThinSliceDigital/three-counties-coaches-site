@@ -157,7 +157,9 @@ export default function ToursPage() {
         </Container>
         <Carousel className="mt-12 pb-2" itemClassName="lg:min-w-[31%]">
           {dayTours.map((t) => (
-            <TourCard key={t.title} {...t} />
+            <a key={t.title} href="/quote" className="block">
+              <TourCard {...t} />
+            </a>
           ))}
         </Carousel>
       </section>
@@ -171,9 +173,21 @@ export default function ToursPage() {
           />
         </Container>
         <Carousel className="mt-12 pb-2" itemClassName="lg:min-w-[31%]">
-          {multiDayTours.map((t) => (
-            <TourCard key={t.title} {...t} />
-          ))}
+          {multiDayTours.map((t) => {
+            const href =
+              t.title === "5-Day Scotland Coach Tour"
+                ? "/tours/5-day-scotland"
+                : t.title === "7-Day Scotland & Lake District Tour"
+                  ? "/tours/7-day-scotland-lake-district"
+                  : t.title === "10-Day UK Highlights Tour"
+                    ? "/tours/10-day-uk-highlights"
+                    : "/tours/10-day-european-group-tour";
+            return (
+              <a key={t.title} href={href} className="block">
+                <TourCard {...t} />
+              </a>
+            );
+          })}
         </Carousel>
         <Container className="pt-6">
           <p className="text-center text-xs text-slate">

@@ -5,6 +5,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "",
     "/tours",
+    "/tours/5-day-scotland",
+    "/tours/7-day-scotland-lake-district",
+    "/tours/10-day-uk-highlights",
+    "/tours/10-day-european-group-tour",
     "/airport-transfers",
     "/golf-transport",
     "/schools",
