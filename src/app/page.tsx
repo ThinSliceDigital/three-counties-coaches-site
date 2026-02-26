@@ -5,7 +5,7 @@ import { Button } from "@/components/button";
 import { Carousel } from "@/components/carousel";
 import { HomeHero } from "@/components/home-hero";
 import { TrustBar } from "@/components/trust-bar";
-import { CTASection } from "@/components/cta-section";
+
 import { Differentiators } from "@/components/differentiators";
 import { TestimonialsStrip } from "@/components/testimonials";
 import {
@@ -217,14 +217,19 @@ export default function HomePage() {
       </section>
 
       {/* MID-PAGE CTA */}
-      <CTASection
-        variant="light"
-        eyebrow="Quote"
-        title="Planning Group Travel?"
-        copy="Tell us your group size, itinerary and dates — we’ll provide a clear, professional quotation."
-        primaryLabel="Request a Quote"
-        secondaryLabel="Contact"
-      />
+      <section className="bg-secondary">
+        <Container className="py-16 sm:py-20 text-center">
+          <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">Quote</div>
+          <h2 className="mt-2 font-serif text-3xl text-charcoal sm:text-4xl">Planning Group Travel?</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-slate">
+            Tell us your group size, itinerary and dates — we’ll provide a clear, professional quotation.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button href="/quote" variant="primary">Request a Quote</Button>
+            <Button href="/contact" variant="outline">Contact</Button>
+          </div>
+        </Container>
+      </section>
 
       {/* SIGNATURE TOURS */}
       <section className="bg-secondary py-16 sm:py-20">
@@ -395,13 +400,19 @@ export default function HomePage() {
       </section>
 
       {/* BOTTOM CTA */}
-      <CTASection
-        variant="dark"
-        title="Plan Your Group Journey"
-        copy="Tell us your group size, itinerary and dates — we’ll provide a clear, professional quotation."
-        primaryLabel="Request a Quote"
-        secondaryLabel="Contact"
-      />
+      <section className="bg-charcoal">
+        <Container className="py-16 sm:py-20 text-center">
+          <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">Enquiries</div>
+          <h2 className="mt-2 font-serif text-3xl text-ivory sm:text-4xl">Plan Your Group Journey</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-ivory/70">
+            Tell us your group size, itinerary and dates — we’ll provide a clear, professional quotation.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <Button href="/quote" variant="primary">Request a Quote</Button>
+            <Button href="/contact" variant="outline" className="border-white/25 text-ivory hover:bg-white/10">Contact</Button>
+          </div>
+        </Container>
+      </section>
     </>
   );
 }
