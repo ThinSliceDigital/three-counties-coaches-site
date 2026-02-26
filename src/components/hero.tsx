@@ -23,7 +23,7 @@ export function Hero({
         />
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/70 via-charcoal/55 to-charcoal/80" />
       </div>
-      <Container className="relative py-16 sm:py-20">{children}</Container>
+      <Container className="relative py-14 sm:py-16">{children}</Container>
     </section>
   );
 }

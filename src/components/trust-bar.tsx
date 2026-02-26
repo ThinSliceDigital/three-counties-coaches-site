@@ -22,7 +22,7 @@ export function TrustBar() {
   return (
     <div className="bg-ivory">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-4 border-b border-charcoal/10 py-6 md:grid-cols-3">
+        <div className="grid gap-4 border-b border-charcoal/10 py-5 md:grid-cols-3">
           {items.map((x) => (
             <div key={x.title} className="flex items-start gap-3">
               <div className="mt-0.5 rounded-lg bg-secondary p-2 ring-1 ring-charcoal/10">

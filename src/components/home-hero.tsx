@@ -15,23 +15,17 @@ export function HomeHero({ heroImage }: { heroImage: string }) {
             Executive Coach &amp; Private Group Transport Across the Three Counties
           </h1>
 
-          <p className="mt-4 text-sm font-medium text-ivory/80">
+          <p className="mt-3 text-sm font-medium text-ivory/80">
             Multi‑Day UK &amp; European Travel · Airport Transfers · School &amp; Corporate Hire
           </p>
 
-          <p className="mt-6 max-w-3xl text-base leading-relaxed text-ivory/80">
-            Three Counties Coaches provides premium private coach and minibus hire across
-            Gloucestershire, Worcestershire and Herefordshire. From multi-day UK and
-            European group travel to executive airport transfers, golf transport and school
-            contracts, we deliver dependable, professional group transport with a modern
-            Euro 6 fleet.
-          </p>
-          <p className="mt-4 max-w-3xl text-base leading-relaxed text-ivory/80">
-            Our team can assist group organisers in coordinating bespoke itineraries tailored
-            to your schedule and travel objectives.
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-ivory/80">
+            Premium private coach and minibus hire across Gloucestershire, Worcestershire and
+            Herefordshire — from multi-day UK &amp; European touring to airport transfers, golf
+            transport and school contracts.
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <div className="mt-7 flex flex-wrap items-center gap-3">
             <button
               type="button"
               onClick={() => setOpen(true)}
@@ -47,9 +41,9 @@ export function HomeHero({ heroImage }: { heroImage: string }) {
             </a>
           </div>
 
-          <p className="mt-6 text-sm text-ivory/70">
-            Euro 6 compliant fleet • Executive black &amp; white coaches •{" "}
-            <span className="text-ivory">Group-only private hire</span> • UK &amp; European travel
+          <p className="mt-5 text-sm text-ivory/70">
+            Primary pickup across <span className="text-ivory">Gloucestershire, Worcestershire &amp; Herefordshire</span> •
+            Euro 6 fleet • Group bookings only
           </p>
         </div>
       </Hero>
