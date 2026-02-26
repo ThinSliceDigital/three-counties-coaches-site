@@ -2,6 +2,8 @@ import Image from "next/image";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import { Carousel } from "@/components/carousel";
+import { Hero } from "@/components/hero";
+import { SectionHeading } from "@/components/section-heading";
 import { PlaneTakeoff, SlidersHorizontal, Users } from "lucide-react";
 
 export const metadata = {
@@ -63,10 +65,11 @@ function TourCard({ title, image, desc }: { title: string; image: string; desc: 
     <div className="overflow-hidden rounded-xl bg-white shadow-soft ring-1 ring-charcoal/10">
       <div className="relative h-44">
         <Image src={image} alt="" fill className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent" />
       </div>
       <div className="p-5">
         <div className="font-serif text-lg text-charcoal">{title}</div>
-        <p className="mt-2 text-sm text-slate">{desc}</p>
+        <p className="mt-2 text-sm leading-relaxed text-slate">{desc}</p>
         <div className="mt-4 text-sm font-medium text-gold">Request quote →</div>
       </div>
     </div>
@@ -76,12 +79,12 @@ function TourCard({ title, image, desc }: { title: string; image: string; desc: 
 export default function ToursPage() {
   return (
     <>
-      <section className="bg-charcoal">
-        <Container className="py-16 text-center">
-          <h1 className="font-serif text-4xl text-ivory sm:text-5xl">
+      <Hero imageSrc="/placeholders/hero.svg">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl text-ivory sm:text-5xl">
             Tours for Groups — Day Trips & Multi‑Day Experiences
           </h1>
-          <p className="mx-auto mt-5 max-w-3xl text-base text-ivory/75">
+          <p className="mt-5 text-base text-ivory/75">
             Premium coach and minibus transport for group organisers, tour coordinators,
             schools and golf parties — with primary pickup across Gloucestershire,
             Worcestershire & Herefordshire.
@@ -89,7 +92,7 @@ export default function ToursPage() {
           <p className="mt-4 text-sm text-ivory/60">
             Euro 6 fleet • 16–51 seats • <span className="text-ivory">Group bookings only</span>
           </p>
-          <div className="mt-8 flex justify-center gap-3">
+          <div className="mt-8 flex flex-wrap gap-3">
             <Button href="/quote" variant="primary">
               Request a Tour Quote
             </Button>
@@ -101,103 +104,102 @@ export default function ToursPage() {
               View Multi‑Day Tours
             </Button>
           </div>
-        </Container>
-      </section>
+        </div>
+      </Hero>
 
-      <section className="bg-secondary">
-        <Container className="py-14">
+      <section className="py-16 sm:py-20 bg-secondary">
+        <Container>
           <div className="mx-auto max-w-4xl text-center">
-            <div className="font-serif text-2xl text-charcoal">Tailored Group Transport</div>
-            <p className="mt-3 text-sm text-slate">
-              Three Counties Coaches provides the vehicle, driver and logistics for your group.
-              Every tour is tailored to your schedule, group size and preferences.
-            </p>
+            <SectionHeading
+              eyebrow="How it works"
+              title="Tailored Group Transport"
+              subtitle="Three Counties Coaches provides the vehicle, driver and logistics for your group. Every tour is tailored to your schedule, group size and preferences."
+            />
 
-            <div className="mt-8 grid gap-8 sm:grid-cols-3">
-              <div className="text-center">
+            <div className="mt-10 grid gap-8 sm:grid-cols-3">
+              <div className="rounded-xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10 text-center">
                 <Users className="mx-auto mb-3 h-8 w-8 text-gold" />
-                <h3 className="font-serif text-base font-semibold text-charcoal">
-                  Private Group Transport
-                </h3>
-                <p className="mt-2 text-sm text-slate">
+                <h3 className="font-serif text-base font-semibold text-charcoal">Private Group Transport</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate">
                   Transport for private groups, clubs, schools and corporate parties.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="rounded-xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10 text-center">
                 <SlidersHorizontal className="mx-auto mb-3 h-8 w-8 text-gold" />
-                <h3 className="font-serif text-base font-semibold text-charcoal">
-                  Fully Customised Itineraries
-                </h3>
-                <p className="mt-2 text-sm text-slate">
+                <h3 className="font-serif text-base font-semibold text-charcoal">Fully Customised Itineraries</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate">
                   Itineraries are examples — every trip is customised to your requirements.
                 </p>
               </div>
-              <div className="text-center">
+              <div className="rounded-xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10 text-center">
                 <PlaneTakeoff className="mx-auto mb-3 h-8 w-8 text-gold" />
-                <h3 className="font-serif text-base font-semibold text-charcoal">
-                  Airport & Hotel Coordination
-                </h3>
-                <p className="mt-2 text-sm text-slate">
+                <h3 className="font-serif text-base font-semibold text-charcoal">Airport & Hotel Coordination</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate">
                   We can coordinate airport pickup, hotel transfers and full touring schedules.
                 </p>
               </div>
             </div>
 
-            <p className="mt-8 text-xs text-slate">
+            <p className="mt-10 text-xs text-slate">
               Three Counties Coaches operates as a trading name of Welland Wheels.
             </p>
           </div>
         </Container>
       </section>
 
-      <section id="day-tours" className="bg-ivory">
-        <Container className="py-14">
-          <div className="text-center">
-            <div className="font-serif text-3xl text-charcoal">Day Tours & Group Excursions</div>
-            <p className="mt-3 text-sm text-slate">
-              Premium day trips for groups, schools and corporates — quote‑based with primary
-              pickup across the three counties.
-            </p>
-          </div>
+      <section id="day-tours" className="py-16 sm:py-20 bg-ivory">
+        <Container>
+          <SectionHeading
+            eyebrow="Day tours"
+            title="Day Tours & Group Excursions"
+            subtitle="Premium day trips for groups, schools and corporates — quote‑based with primary pickup across the three counties."
+          />
         </Container>
-        <Carousel className="pb-14" itemClassName="lg:min-w-[31%]">
+        <Carousel className="mt-12 pb-2" itemClassName="lg:min-w-[31%]">
           {dayTours.map((t) => (
             <TourCard key={t.title} {...t} />
           ))}
         </Carousel>
       </section>
 
-      <section id="multi-day-tours" className="bg-secondary">
-        <Container className="py-14">
-          <div className="text-center">
-            <div className="font-serif text-3xl text-charcoal">Multi‑Day Tours</div>
-            <p className="mt-3 text-sm text-slate">
-              Calm, dependable logistics with Scotland and Lake District experience — UK‑wide
-              and Europe by request.
-            </p>
-          </div>
+      <section id="multi-day-tours" className="py-16 sm:py-20 bg-secondary">
+        <Container>
+          <SectionHeading
+            eyebrow="Multi‑day"
+            title="Multi‑Day Tours"
+            subtitle="Calm, dependable logistics with Scotland and Lake District experience — UK‑wide and Europe by request."
+          />
         </Container>
-        <Carousel className="pb-6" itemClassName="lg:min-w-[31%]">
+        <Carousel className="mt-12 pb-2" itemClassName="lg:min-w-[31%]">
           {multiDayTours.map((t) => (
             <TourCard key={t.title} {...t} />
           ))}
         </Carousel>
-        <Container className="pb-14">
+        <Container className="pt-6">
           <p className="text-center text-xs text-slate">
             All itineraries are examples — every tour is tailored to your group, timings and accommodation.
           </p>
         </Container>
       </section>
 
-      <section className="bg-charcoal">
-        <Container className="py-16 text-center">
-          <div className="font-serif text-3xl text-ivory">Plan Your Group Tour</div>
-          <p className="mx-auto mt-4 max-w-2xl text-sm text-ivory/70">
+      <section className="py-16 sm:py-20 bg-charcoal">
+        <Container className="text-center">
+          <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">Enquiries</div>
+          <h2 className="mt-2 text-3xl text-ivory sm:text-4xl">Plan Your Group Tour</h2>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-ivory/70">
             Share your dates and group details — we’ll confirm the right vehicle and schedule.
           </p>
           <div className="mt-8 flex justify-center gap-3">
-            <Button href="/quote" variant="primary">Request a Tour Quote</Button>
-            <Button href="/contact" variant="outline" className="border-white/25 text-ivory hover:bg-white/10">Call Us</Button>
+            <Button href="/quote" variant="primary">
+              Request a Tour Quote
+            </Button>
+            <Button
+              href="/contact"
+              variant="outline"
+              className="border-white/25 text-ivory hover:bg-white/10"
+            >
+              Call Us
+            </Button>
           </div>
         </Container>
       </section>
