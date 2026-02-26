@@ -69,11 +69,11 @@ const days: DayStop[] = [
 export default function Page() {
   return (
     <TourPageShell
-      heroImage="/placeholders/uk-landmarks.svg"
+      heroImage="/images/unsplash/uk-landmarks.jpg"
       title="10-Day UK Highlights Tour"
       subtitle="The ultimate British road trip — Scotland, the Lake District, Yorkshire, the Cotswolds and more, at a pace that suits your group."
       intro="This sample itinerary demonstrates how a ten-day UK highlights tour can be structured for comfort and flow. We’ll tailor the exact route, accommodation and activity mix around your group — from scenic touring to heritage-focused itineraries."
-      sliderImages={["/placeholders/uk-landmarks.svg", "/placeholders/scotland.svg", "/placeholders/lake-district.svg"]}
+      sliderImages={["/images/unsplash/uk-landmarks.jpg", "/images/unsplash/scotland-highlands.jpg", "/images/unsplash/lake-district.jpg"]}
       highlights={[
         "A balanced itinerary across multiple UK regions",
         "Flexible pacing for sightseeing and rest",

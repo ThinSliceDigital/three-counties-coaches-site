@@ -13,7 +13,7 @@ export const metadata = {
 export default function GolfTransportPage() {
   return (
     <>
-      <Hero imageSrc="/placeholders/hero.svg">
+      <Hero imageSrc="/images/unsplash/hero-coach-countryside.jpg">
         <div className="max-w-3xl">
           <h1 className="text-4xl text-ivory sm:text-5xl">Golf Group Transport</h1>
           <p className="mt-5 text-base text-ivory/75">

@@ -91,11 +91,11 @@ const days: DayStop[] = [
 export default function Page() {
   return (
     <TourPageShell
-      heroImage="/placeholders/lake-district.svg"
+      heroImage="/images/unsplash/lake-district.jpg"
       title="7-Day Scotland & Lake District Tour"
       subtitle="A week-long journey combining the rugged beauty of the Scottish Highlands with the tranquil lakes and fells of England’s Lake District."
       intro="This is a sample week itinerary designed for private groups. We’ll tailor the route, stops and hotel schedule around your objectives — from sightseeing-focused tours to slower-paced scenic breaks."
-      sliderImages={["/placeholders/lake-district.svg", "/placeholders/scotland.svg", "/placeholders/uk-landmarks.svg"]}
+      sliderImages={["/images/unsplash/lake-district.jpg", "/images/unsplash/scotland-highlands.jpg", "/images/unsplash/uk-landmarks.jpg"]}
       highlights={[
         "Highlands + Lake District combination itinerary",
         "Flexible attraction planning and pacing",

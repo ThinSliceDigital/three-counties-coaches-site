@@ -24,28 +24,28 @@ export const metadata = {
 const signatureTours = [
   {
     title: "5-Day Scotland Coach Tour",
-    image: "/placeholders/scotland.svg",
+    image: "/images/unsplash/scotland-highlands.jpg",
     blurb:
       "Five days through the dramatic Highlands — Glencoe, Loch Ness, Edinburgh and the Cairngorms — tailored to your group.",
     href: "/tours#multi-day-tours",
   },
   {
     title: "7-Day Scotland & Lake District",
-    image: "/placeholders/lake-district.svg",
+    image: "/images/unsplash/lake-district.jpg",
     blurb:
       "A week combining Highland drama with the tranquil lakes and fells of England’s Lake District.",
     href: "/tours#multi-day-tours",
   },
   {
     title: "10-Day UK Highlights",
-    image: "/placeholders/uk-landmarks.svg",
+    image: "/images/unsplash/uk-landmarks.jpg",
     blurb:
       "The ultimate UK road trip — Scotland, the Lakes, Yorkshire, the Cotswolds and more, at your pace.",
     href: "/tours#multi-day-tours",
   },
   {
     title: "10-Day European Group Tour",
-    image: "/placeholders/europe.svg",
+    image: "/images/unsplash/paris-europe.jpg",
     blurb:
       "Ten days across Europe by executive coach — airport transfers and cross‑Channel logistics handled for you.",
     href: "/tours#multi-day-tours",
@@ -88,7 +88,7 @@ const services = [
 export default function HomePage() {
   return (
     <>
-      <Hero imageSrc="/placeholders/hero.svg">
+      <Hero imageSrc="/images/unsplash/hero-coach-countryside.jpg">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
@@ -264,7 +264,7 @@ export default function HomePage() {
 
             <div className="rounded-xl bg-white shadow-soft ring-1 ring-charcoal/10 overflow-hidden">
               <div className="relative h-52 bg-secondary">
-                <Image src="/placeholders/hero.svg" alt="" fill className="object-cover" />
+                <Image src="/images/unsplash/hero-coach-countryside.jpg" alt="" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/50 via-transparent to-transparent" />
               </div>
               <div className="p-6">

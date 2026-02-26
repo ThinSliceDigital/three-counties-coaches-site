@@ -69,11 +69,11 @@ const days: DayStop[] = [
 export default function Page() {
   return (
     <TourPageShell
-      heroImage="/placeholders/europe.svg"
+      heroImage="/images/unsplash/paris-europe.jpg"
       title="10-Day European Group Tour"
       subtitle="Ten days across Europe by executive coach — France, Switzerland and Italy, with airport transfers and cross‑Channel logistics handled for you."
       intro="European touring is logistics-heavy — this sample structure shows how we plan drive-times, hotel transfers and crossing schedules for smooth group travel. Exact destinations and pacing depend on your group’s objectives and accommodation plan."
-      sliderImages={["/placeholders/europe.svg", "/placeholders/uk-landmarks.svg", "/placeholders/hero.svg"]}
+      sliderImages={["/images/unsplash/paris-europe.jpg", "/images/unsplash/uk-landmarks.jpg", "/images/unsplash/hero-coach-countryside.jpg"]}
       highlights={[
         "Cross‑Channel logistics planning",
         "Hotel transfers and daily timing coordination",

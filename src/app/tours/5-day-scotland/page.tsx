@@ -69,11 +69,11 @@ const days: DayStop[] = [
 export default function Page() {
   return (
     <TourPageShell
-      heroImage="/placeholders/scotland.svg"
+      heroImage="/images/unsplash/scotland-highlands.jpg"
       title="5-Day Scotland Coach Tour"
       subtitle="A premium, private group tour through the dramatic Highlands — with a calm schedule, comfortable transport and logistics handled end-to-end."
       intro="This sample itinerary is designed to showcase what a five-day Scotland tour can look like with an executive coach and professional driver. Every tour is tailored to your dates, accommodation preferences and sightseeing priorities."
-      sliderImages={["/placeholders/scotland.svg", "/placeholders/lake-district.svg", "/placeholders/hero.svg"]}
+      sliderImages={["/images/unsplash/scotland-highlands.jpg", "/images/unsplash/lake-district.jpg", "/images/unsplash/hero-coach-countryside.jpg"]}
       highlights={[
         "Highlands scenery with flexible photo stops",
         "Optional Loch Ness cruise and attraction planning",

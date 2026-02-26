@@ -15,25 +15,25 @@ export const metadata = {
 const multiDayTours = [
   {
     title: "5-Day Scotland Coach Tour",
-    image: "/placeholders/scotland.svg",
+    image: "/images/unsplash/scotland-highlands.jpg",
     desc:
       "Five days through the dramatic Highlands — Glencoe, Loch Ness, Edinburgh and the Cairngorms, with overnight stops tailored to your group.",
   },
   {
     title: "7-Day Scotland & Lake District Tour",
-    image: "/placeholders/lake-district.svg",
+    image: "/images/unsplash/lake-district.jpg",
     desc:
       "A week-long journey combining the rugged beauty of the Scottish Highlands with the tranquil lakes and fells of England’s Lake District.",
   },
   {
     title: "10-Day UK Highlights Tour",
-    image: "/placeholders/uk-landmarks.svg",
+    image: "/images/unsplash/uk-landmarks.jpg",
     desc:
       "The ultimate British road trip — Scotland, the Lake District, Yorkshire, the Cotswolds and more, at a pace that suits your group.",
   },
   {
     title: "10-Day European Group Tour",
-    image: "/placeholders/europe.svg",
+    image: "/images/unsplash/paris-europe.jpg",
     desc:
       "Ten days across Europe by executive coach — France, Switzerland and Italy, with airport transfers and cross‑Channel logistics handled for you.",
   },
@@ -42,19 +42,19 @@ const multiDayTours = [
 const dayTours = [
   {
     title: "London Day Trip by Coach",
-    image: "/placeholders/uk-landmarks.svg",
+    image: "/images/unsplash/london-skyline.jpg",
     desc:
       "A full day in the capital with door-to-door coach travel — sightseeing, shopping, shows and more, all at your group’s pace.",
   },
   {
     title: "Harry Potter Studio Tour Transport",
-    image: "/placeholders/hero.svg",
+    image: "/images/unsplash/harry-potter.jpg",
     desc:
       "Comfortable return coach transport to Warner Bros. Studio Tour London — sit back and let us handle the driving while your group enjoys the magic.",
   },
   {
     title: "Seaside & Coastal Day Trips",
-    image: "/placeholders/hero.svg",
+    image: "/images/unsplash/british-seaside.jpg",
     desc:
       "Classic British seaside fun for your group — golden sands, fish and chips and fresh sea air, with pick‑up and drop‑off included.",
   },
@@ -79,7 +79,7 @@ function TourCard({ title, image, desc }: { title: string; image: string; desc: 
 export default function ToursPage() {
   return (
     <>
-      <Hero imageSrc="/placeholders/hero.svg">
+      <Hero imageSrc="/images/unsplash/hero-coach-countryside.jpg">
         <div className="max-w-3xl">
           <h1 className="text-4xl text-ivory sm:text-5xl">
             Tours for Groups — Day Trips & Multi‑Day Experiences
@@ -156,11 +156,19 @@ export default function ToursPage() {
           />
         </Container>
         <Carousel className="mt-12 pb-2" itemClassName="lg:min-w-[31%]">
-          {dayTours.map((t) => (
-            <a key={t.title} href="/quote" className="block">
-              <TourCard {...t} />
-            </a>
-          ))}
+          {dayTours.map((t) => {
+            const href =
+              t.title === "London Day Trip by Coach"
+                ? "/day-tours/london-day-trip"
+                : t.title === "Harry Potter Studio Tour Transport"
+                  ? "/day-tours/harry-potter-studio-transport"
+                  : "/day-tours/seaside-coastal-day-trips";
+            return (
+              <a key={t.title} href={href} className="block">
+                <TourCard {...t} />
+              </a>
+            );
+          })}
         </Carousel>
       </section>
 
