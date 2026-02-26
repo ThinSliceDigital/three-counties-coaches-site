@@ -6,12 +6,12 @@ import { Phone } from "lucide-react";
 import { Hero } from "@/components/hero";
 import { QuoteModal } from "@/components/quote-modal";
 
-export function HomeHero() {
+export function HomeHero({ heroImage }: { heroImage: string }) {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Hero imageSrc="/images/home/hero.jpg">
+      <Hero imageSrc={heroImage}>
         <div className="max-w-4xl">
           <div className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
             Multi‑Day UK & European Travel · Airport Transfers · School & Corporate Hire

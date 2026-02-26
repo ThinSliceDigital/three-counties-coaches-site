@@ -30,31 +30,70 @@ export const metadata = {
     "Three Counties Coaches provides premium private coach and minibus hire across Gloucestershire, Worcestershire and Herefordshire. Tours, airport transfers, golf transport and school contracts with a modern Euro 6 fleet.",
 };
 
+// Lovable-curated homepage imagery (exact URLs)
+const LOVABLE = {
+  hero: "https://three-counties-coaches.lovable.app/assets/hero-countryside-DpN9tFLd.jpg",
+  services: {
+    airport: "https://three-counties-coaches.lovable.app/assets/airport-transfer-_cLvz1Ud.jpg",
+    golf: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=600&h=400&fit=crop",
+    schools: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=400&fit=crop",
+    corporate:
+      "https://three-counties-coaches.lovable.app/assets/corporate-chauffeur-CCsw31Ju.jpg",
+  },
+  tours: {
+    scotland: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop",
+    scotlandLakes:
+      "https://images.unsplash.com/photo-1600337751733-12c9e0e47908?w=600&h=400&fit=crop",
+    ukHighlights:
+      "https://images.unsplash.com/photo-1486299267070-83823f5448dd?w=600&h=400&fit=crop",
+    europe:
+      "https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&h=400&fit=crop",
+  },
+  dayTours: {
+    london:
+      "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&h=400&fit=crop",
+    harry:
+      "https://images.unsplash.com/photo-1551269901-5c5e14c25df7?w=600&h=400&fit=crop",
+    seaside:
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&h=400&fit=crop",
+  },
+  fleet: {
+    minibus16:
+      "https://three-counties-coaches.lovable.app/assets/minibus-16-DTq5mV4k.png",
+    midi22: "https://three-counties-coaches.lovable.app/assets/midi-22-0y0YUjvy.png",
+    midi25: "https://three-counties-coaches.lovable.app/assets/midi-25-DLslKdpd.png",
+    exec35:
+      "https://three-counties-coaches.lovable.app/assets/executive-35-Djp9Qq4f.png",
+    full51:
+      "https://three-counties-coaches.lovable.app/assets/fullsize-51-BsJ-d5I1.png",
+  },
+};
+
 const signatureTours = [
   {
     title: "5-Day Scotland Coach Tour",
-    image: "/images/unsplash/scotland-highlands.jpg",
+    image: LOVABLE.tours.scotland,
     blurb:
       "Five days through the dramatic Highlands — Glencoe, Loch Ness, Edinburgh and the Cairngorms, with overnight stops tailored to your group.",
     href: "/tours/5-day-scotland",
   },
   {
     title: "7-Day Scotland & Lake District Tour",
-    image: "/images/unsplash/lake-district.jpg",
+    image: LOVABLE.tours.scotlandLakes,
     blurb:
       "A week-long journey combining the rugged beauty of the Scottish Highlands with the tranquil lakes and fells of England’s Lake District.",
     href: "/tours/7-day-scotland-lake-district",
   },
   {
     title: "10-Day UK Highlights Tour",
-    image: "/images/unsplash/uk-landmarks.jpg",
+    image: LOVABLE.tours.ukHighlights,
     blurb:
       "The ultimate British road trip — Scotland, the Lake District, Yorkshire, the Cotswolds and more, at a pace that suits your group.",
     href: "/tours/10-day-uk-highlights",
   },
   {
     title: "10-Day European Group Tour",
-    image: "/images/unsplash/paris-europe.jpg",
+    image: LOVABLE.tours.europe,
     blurb:
       "Ten days across Europe by executive coach — France, Switzerland and Italy, with airport transfers and cross-Channel logistics handled for you.",
     href: "/tours/10-day-european-group-tour",
@@ -65,30 +104,35 @@ const services = [
   {
     title: "Airport Transfers for Groups",
     icon: PlaneTakeoff,
+    image: LOVABLE.services.airport,
     desc: "Comfortable group transfers to Heathrow, Birmingham, Bristol and regional airports with flexible pickup coordination.",
     href: "/airport-transfers",
   },
   {
     title: "Golf Group Transport",
     icon: Trophy,
+    image: LOVABLE.services.golf,
     desc: "Equipment-friendly transport with generous luggage capacity and trailer availability for golf societies and tournaments.",
     href: "/golf-transport",
   },
   {
     title: "School & Educational Contracts",
     icon: GraduationCap,
+    image: LOVABLE.services.schools,
     desc: "Professional, contract-ready school transport solutions across the Three Counties, delivered with reliability and care.",
     href: "/schools",
   },
   {
     title: "Corporate & Chauffeur Services",
     icon: Briefcase,
+    image: LOVABLE.services.corporate,
     desc: "Executive transport for corporate events, conferences and team travel — punctual, professional and discreet.",
     href: "/quote",
   },
   {
     title: "Multi‑Day UK & European Travel",
     icon: Map,
+    image: LOVABLE.tours.scotland,
     desc: "Private group touring with itinerary coordination — Scotland & Lake District focus.",
     href: "/tours",
   },
@@ -127,13 +171,13 @@ export default function HomePage() {
   return (
     <div className={headings.variable}>
       {/* HERO */}
-      <HomeHero />
+      <HomeHero heroImage={LOVABLE.hero} />
 
       {/* TRUST BAR */}
       <TrustBar />
 
       {/* SERVICES */}
-      <section id="services" className="py-16 sm:py-20 bg-ivory">
+      <section id="services" className="bg-ivory py-16 sm:py-20">
         <Container>
           <HomeSectionHeading
             eyebrow="Services"
@@ -146,18 +190,30 @@ export default function HomePage() {
               <a
                 key={s.title}
                 href={s.href}
-                className="rounded-xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10 transition hover:-translate-y-0.5"
+                className="overflow-hidden rounded-xl bg-white shadow-soft ring-1 ring-charcoal/10 transition hover:-translate-y-0.5"
               >
-                <div className="flex items-start gap-3">
-                  <div className="rounded-lg bg-secondary p-2 ring-1 ring-charcoal/10">
-                    <s.icon className="h-5 w-5 text-gold" />
-                  </div>
-                  <div>
-                    <div className="text-base font-semibold tracking-tight text-charcoal">
-                      {s.title}
+                <div className="relative h-40">
+                  <Image
+                    src={s.image}
+                    alt={s.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-charcoal/45 via-transparent to-transparent" />
+                </div>
+                <div className="p-6">
+                  <div className="flex items-start gap-3">
+                    <div className="rounded-lg bg-secondary p-2 ring-1 ring-charcoal/10">
+                      <s.icon className="h-5 w-5 text-gold" />
                     </div>
-                    <p className="mt-2 text-sm leading-relaxed text-slate">{s.desc}</p>
-                    <div className="mt-3 text-sm font-medium text-gold">Learn more →</div>
+                    <div>
+                      <div className="text-base font-semibold tracking-tight text-charcoal">
+                        {s.title}
+                      </div>
+                      <p className="mt-2 text-sm leading-relaxed text-slate">{s.desc}</p>
+                      <div className="mt-3 text-sm font-medium text-gold">Learn more →</div>
+                    </div>
                   </div>
                 </div>
               </a>
@@ -177,7 +233,7 @@ export default function HomePage() {
       />
 
       {/* SIGNATURE TOURS */}
-      <section className="py-16 sm:py-20 bg-secondary">
+      <section className="bg-secondary py-16 sm:py-20">
         <Container>
           <HomeSectionHeading
             eyebrow="Tours"
@@ -194,7 +250,13 @@ export default function HomePage() {
               className="block overflow-hidden rounded-xl bg-white shadow-soft ring-1 ring-charcoal/10"
             >
               <div className="relative h-44">
-                <Image src={t.image} alt="" fill className="object-cover" />
+                <Image
+                  src={t.image}
+                  alt={t.title}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 90vw, 33vw"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal/55 via-transparent to-transparent" />
               </div>
               <div className="p-5">
@@ -216,7 +278,7 @@ export default function HomePage() {
       </section>
 
       {/* FLEET SNAPSHOT */}
-      <section className="py-16 sm:py-20 bg-ivory">
+      <section className="bg-ivory py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
             <div>
@@ -251,25 +313,28 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="overflow-hidden rounded-xl bg-white shadow-soft ring-1 ring-charcoal/10">
-              <div className="relative h-56 bg-secondary">
-                <Image
-                  src="/images/home/coach-exterior.jpg"
-                  alt=""
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/55 via-transparent to-transparent" />
-              </div>
-              <div className="p-6">
-                <div className="grid grid-cols-5 gap-3">
-                  {["16", "22", "25", "35", "51"].map((n) => (
-                    <div key={n} className="text-center">
-                      <div className="mx-auto h-10 w-10 rounded-full bg-secondary ring-1 ring-charcoal/10" />
-                      <div className="mt-2 text-xs text-slate">{n} seats</div>
+            <div className="overflow-hidden rounded-xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10">
+              <div className="grid grid-cols-5 gap-3">
+                {[
+                  { label: "16-seat Minibus", img: LOVABLE.fleet.minibus16, seats: "16" },
+                  { label: "22-seat Midi Coach", img: LOVABLE.fleet.midi22, seats: "22" },
+                  { label: "25-seat Midi Coach", img: LOVABLE.fleet.midi25, seats: "25" },
+                  { label: "35-seat Executive Coach", img: LOVABLE.fleet.exec35, seats: "35" },
+                  { label: "51-seat Full-Size Coach", img: LOVABLE.fleet.full51, seats: "51" },
+                ].map((v) => (
+                  <div key={v.seats} className="text-center">
+                    <div className="relative mx-auto h-10 w-10">
+                      <Image
+                        src={v.img}
+                        alt={v.label}
+                        fill
+                        className="object-contain"
+                        sizes="40px"
+                      />
                     </div>
-                  ))}
-                </div>
+                    <div className="mt-2 text-xs text-slate">{v.seats} seats</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -277,7 +342,7 @@ export default function HomePage() {
       </section>
 
       {/* WHY CHOOSE + TESTIMONIALS */}
-      <section className="py-16 sm:py-20 bg-secondary">
+      <section className="bg-secondary py-16 sm:py-20">
         <Container>
           <HomeSectionHeading
             eyebrow="Why choose"
@@ -293,7 +358,7 @@ export default function HomePage() {
       </section>
 
       {/* LOCATIONS */}
-      <section className="py-16 sm:py-20 bg-ivory">
+      <section className="bg-ivory py-16 sm:py-20">
         <Container>
           <HomeSectionHeading
             eyebrow="Areas"
@@ -303,12 +368,30 @@ export default function HomePage() {
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
-              { name: "Coach Hire Gloucestershire", href: "/locations/gloucestershire", desc: "Private group transport across Gloucestershire" },
-              { name: "Coach Hire Worcestershire", href: "/locations/worcestershire", desc: "Private group transport across Worcestershire" },
-              { name: "Coach Hire Herefordshire", href: "/locations/herefordshire", desc: "Private group transport across Herefordshire" },
+              {
+                name: "Coach Hire Gloucestershire",
+                href: "/locations/gloucestershire",
+                desc: "Private group transport across Gloucestershire",
+              },
+              {
+                name: "Coach Hire Worcestershire",
+                href: "/locations/worcestershire",
+                desc: "Private group transport across Worcestershire",
+              },
+              {
+                name: "Coach Hire Herefordshire",
+                href: "/locations/herefordshire",
+                desc: "Private group transport across Herefordshire",
+              },
             ].map((c) => (
-              <a key={c.name} href={c.href} className="rounded-xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10 transition hover:-translate-y-0.5">
-                <div className="text-base font-semibold tracking-tight text-charcoal">{c.name}</div>
+              <a
+                key={c.name}
+                href={c.href}
+                className="rounded-xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10 transition hover:-translate-y-0.5"
+              >
+                <div className="text-base font-semibold tracking-tight text-charcoal">
+                  {c.name}
+                </div>
                 <div className="mt-2 text-sm leading-relaxed text-slate">{c.desc}</div>
                 <div className="mt-3 text-sm font-medium text-gold">Explore →</div>
               </a>
