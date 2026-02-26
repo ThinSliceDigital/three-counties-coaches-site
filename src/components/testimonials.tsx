@@ -19,7 +19,7 @@ export function TestimonialsStrip() {
 
   return (
     <div className="mt-10">
-      <p className="text-sm text-slate">
+      <p className="text-sm leading-relaxed text-slate">
         Trusted by group organisers, schools and corporate clients across the Three Counties.
         Client testimonials shown below are representative examples. Verified customer reviews
         will be published shortly.
@@ -32,7 +32,9 @@ export function TestimonialsStrip() {
             className="rounded-xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10"
           >
             <p className="text-sm leading-relaxed text-charcoal/80">“{t.quote}”</p>
-            <div className="mt-4 text-sm font-medium text-charcoal">{t.by}</div>
+            <div className="mt-4 text-sm font-semibold tracking-tight text-charcoal">
+              {t.by}
+            </div>
           </div>
         ))}
       </div>

@@ -25,7 +25,9 @@ export function Differentiators() {
           className="rounded-xl bg-white p-6 shadow-soft ring-1 ring-charcoal/10"
         >
           <x.icon className="h-6 w-6 text-gold" />
-          <div className="mt-3 font-serif text-lg text-charcoal">{x.title}</div>
+          <div className="mt-3 text-base font-semibold tracking-tight text-charcoal">
+            {x.title}
+          </div>
         </div>
       ))}
     </div>
