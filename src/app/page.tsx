@@ -32,7 +32,7 @@ export const metadata = {
 
 // Lovable-curated homepage imagery (exact URLs)
 const LOVABLE = {
-  hero: "https://three-counties-coaches.lovable.app/assets/hero-countryside-DpN9tFLd.jpg",
+  hero: "https://three-counties-coaches.lovable.app/assets/hero-countryside-DpN9tFLd.jpg?v=1",
   services: {
     airport: "https://three-counties-coaches.lovable.app/assets/airport-transfer-_cLvz1Ud.jpg",
     golf: "https://images.unsplash.com/photo-1535131749006-b7f58c99034b?w=600&h=400&fit=crop",
